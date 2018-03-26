@@ -1,0 +1,14 @@
+body{
+    background: url("../images/the-mentalist.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background: image("../assets/images/nate.jpg"); */
+  
+  }
+
+h1,
+#game{
+    font-weight: bold;
+    color: indianred;
+    font-size: 30px;
+  }

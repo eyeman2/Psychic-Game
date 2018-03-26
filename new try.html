@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <h1>Psychic Game</h1>
+    </div>
+    <div id="game">
+        
+    </div>
+
+    <script type="text/javascript">
+        var computerChoices = ["a" ,"b" , "c" , "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+        var wins = 0;
+        var losses = 0;
+        var countdown = 9;
+        var Guessed = [];
+
+        document.onkeyup = function(event) {
+        
+        
+        var userGuess = event.key;
+        Guessed.push(userGuess); 
+        console.log(Guessed)
+        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        
+        if (userGuess === computerGuess){
+            wins++;
+            Guessed = [];
+            countdown = 9;
+            alert("I'm So Proud of You!");
+        }
+            else {
+                countdown--;
+            }
+
+
+            if (countdown === 0) {{
+                losses++;
+                countdown = 9;
+                Guessed = [];
+            }
+                
+                if (losses =+ 1) {
+                    alert("You loss buddy");  
+                    
+    
+                }
+        }
+        
+        var html = 
+        "<p>Wins: " + wins +"<p>" +
+        "<p>Losses: " + losses +"</p>" +
+        "<p>Remaining: " + countdown +"</p>" +
+        "<p>Letters Guessed: " + Guessed + "</p>";
+        
+        document.querySelector("#game").innerHTML = html;
+    }
+
+    </script>
+</body>
+</html>
